@@ -1,0 +1,14 @@
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.runtimeconfig.json
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.AssemblyReference.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.genruntimeconfig.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
