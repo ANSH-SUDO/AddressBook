@@ -1,0 +1,11 @@
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\bin\Debug\net6.0\ModelLayer.deps.json
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\bin\Debug\net6.0\ModelLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\bin\Debug\net6.0\ModelLayer.pdb
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfoInputs.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.AssemblyInfo.cs
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.csproj.CoreCompileInputs.cache
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\refint\ModelLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ModelLayer.pdb
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\ModelLayer\obj\Debug\net6.0\ref\ModelLayer.dll
