@@ -1,5 +1,8 @@
+using AutoMapper;
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using BusinessLayer.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
@@ -14,9 +17,10 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
 builder.Services.AddDbContext<AddressContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IAddressRL, AddressRL>();
-builder.Services.AddScoped<IAddressBL, AddressBL>();
-
+builder.Services.AddScoped<IAddressBookServiceRL, AddressBookServiceRL>();
+builder.Services.AddScoped<IAddressBookServiceBL, AddressBookServiceBL>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
 var app = builder.Build();
 

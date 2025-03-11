@@ -79,3 +79,9 @@ E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debu
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debug\net6.0\ref\AddressBook.dll
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Humanizer.dll
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\AutoMapper.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\FluentValidation.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debug\net6.0\AddressBook.MvcApplicationPartsAssemblyInfo.cs
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

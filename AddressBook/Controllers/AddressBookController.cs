@@ -1,6 +1,8 @@
+using AutoMapper;
 using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ModelLayer;
 using ModelLayer.DTO;
 using RepositoryLayer.Context;
 using RepositoryLayer.Entity;
@@ -12,10 +14,12 @@ namespace AddressBook.Controllers;
 [Route("[controller]")]
 public class AddressBookController : ControllerBase
 {
-    private readonly AddressContext _dbContext;
-    public AddressBookController(AddressContext dbContext)
+    private readonly IAddressBookServiceBL _addressBL;
+    private readonly IMapper _mapper;
+    public AddressBookController(IAddressBookServiceBL addressBL, IMapper mapper)
     {
-        _dbContext = dbContext;
+        _addressBL = addressBL;
+        _mapper = mapper;
     }
 
     /// <summary>
@@ -23,21 +27,14 @@ public class AddressBookController : ControllerBase
     /// </summary>
     /// <returns>Contacts</returns>
     [HttpGet]
-    public ActionResult<ResponseDTO<string>> GetAllContacts()
+    public ActionResult<string> GetAllContacts()
     {
-        if (_dbContext.Users != null)
+        var result = _addressBL.GetAllContacts();
+        return Ok(new
         {
-            return Ok(new
-            {
-                Success = true,
-                Message = "Contacts fetched successfully",
-                Data = ""
-            });
-        }
-        return NotFound(new
-        {
-            Success = false,
-            Message = "No contacts found"
+            Success = true,
+            Message = "Contact fetch successful",
+            Data = result
         });
     }
 
@@ -48,22 +45,17 @@ public class AddressBookController : ControllerBase
     /// <returns>Contacts</returns>
     [HttpGet]
     [Route("addressBook/{id}")]
-    public ActionResult<ResponseDTO<string>> GetContactById(int id)
+    public ActionResult<string> GetContactById(int id)
     {
-        if (_dbContext != null)
-        {
-            return Ok(new
-            {
-                Success = true,
-                Message = "Contact fetched successfully",
-                Data = ""
-            });
-        }
+        var result = _addressBL.GetContactById(id);
+        if (result == null)
+            return NotFound(new { Message = "Contact not found" });
 
-        return NotFound(new
+        return Ok(new
         {
-            Success = false,
-            Message = $"Contact with ID {id} not found"
+            Success = true,
+            Message = $"Contact fetch successful with id {id}",
+            Data = result
         });
     }
 
@@ -74,35 +66,10 @@ public class AddressBookController : ControllerBase
     /// <returns>Add Contact</returns>
     [HttpPost]
     [Route("addContact")]
-    public ActionResult<ResponseDTO<string>> AddContact([FromBody] RequestDTO requestDTO)
+    public ActionResult<string> AddContact([FromBody] AddressBookEntryDTO addressEntryDTO)
     {
-        if (ModelState.IsValid)
-        {
-            var newContact = new AddressEntity
-            {
-                FirstName = requestDTO.FirstName,
-                LastName = requestDTO.LastName,
-                Email = requestDTO.Email,
-                PhoneNumber = requestDTO.PhoneNumber,
-                Password = requestDTO.Password
-            };
-
-            _dbContext.Users.Add(newContact);
-            _dbContext.SaveChanges();
-
-            return Ok(new
-            {
-                Success = true,
-                Message = "Contact added successfully",
-                Data = $"{newContact.FirstName}, {newContact.LastName}, {newContact.Email}, {newContact.PhoneNumber}"
-            });
-        }
-
-        return BadRequest(new
-        {
-            Success = false,
-            Message = "Invalid data"
-        });        
+        var result = _addressBL.AddContact(addressEntryDTO);
+        return CreatedAtAction(nameof(AddContact), new { id = result.Name }, result);       
     }
 
     /// <summary>
@@ -113,41 +80,17 @@ public class AddressBookController : ControllerBase
     /// <returns>Updates Contact</returns>
     [HttpPut]
     [Route("updateContact/{id}")]
-    public ActionResult<ResponseDTO<string>> UpdateContact(int id, [FromBody] RequestDTO requestDTO)
+    public ActionResult<string> UpdateContact(int id, [FromBody] AddressBookEntryDTO addressEntryDTO)
     {
-        if (ModelState.IsValid)
+        var result = _addressBL.UpdateContact(id, addressEntryDTO);
+        if (result == null)
+            return NotFound(new { Message = "Contact not found" });
+
+        return Ok(new
         {
-            var newContact = _dbContext.Users.Find(id);
-
-            if (newContact == null)
-            {
-                return NotFound(new
-                {
-                    Success = false,
-                    Message = $"Contact with ID {newContact.Id} not found"
-                });
-            }
-
-            newContact.FirstName = requestDTO.FirstName;
-            newContact.LastName = requestDTO.LastName;
-            newContact.Email = requestDTO.Email;
-            newContact.PhoneNumber = requestDTO.PhoneNumber;
-
-            _dbContext.Users.Update(newContact);
-            _dbContext.SaveChanges();
-
-            return Ok(new
-            {
-                Success = true,
-                Message = "Contact updated successfully",
-                Data = newContact
-            });
-        }
-
-        return BadRequest(new
-        {
-            Success = false,
-            Message = "Invalid data"
+            Success = true,
+            Message = $"Contact updated successful with id {id}",
+            Data = result
         });
     }
 
@@ -158,26 +101,12 @@ public class AddressBookController : ControllerBase
     /// <returns></returns>
     [HttpDelete]
     [Route("deleteContact/{id}")]
-    public ActionResult<ResponseDTO<string>> DeleteContact(int id)
+    public ActionResult<string> DeleteContact(int id)
     {
-        var contact = _dbContext.Users.Find(id);
+        var isDeleted = _addressBL.DeleteContact(id);
+        if (!isDeleted)
+            return NotFound(new { Message = "Contact not found" });
 
-        if (contact == null)
-        {
-            return NotFound(new
-            {
-                Success = false,
-                Message = $"Contact with ID {contact.Id} not found"
-            });   
-        }
-
-        _dbContext.Users.Remove(contact);
-        _dbContext.SaveChanges();
-
-        return Ok(new
-        {
-            Success = true,
-            Message = $"Contact with id {contact.Id} deleted successfully"
-        });
+        return Ok(new { Message = "Contact deleted successfully" });
     }
 }

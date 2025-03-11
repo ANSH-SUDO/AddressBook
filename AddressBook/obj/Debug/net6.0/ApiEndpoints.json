@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "ModelLayer.DTO.ResponseDTO\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,14 +28,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "requestDTO",
-        "Type": "ModelLayer.DTO.RequestDTO",
+        "Name": "addressEntryDTO",
+        "Type": "ModelLayer.DTO.AddressBookEntryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ModelLayer.DTO.ResponseDTO\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModelLayer.DTO.ResponseDTO\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -87,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ModelLayer.DTO.ResponseDTO\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -111,14 +111,14 @@
         "IsRequired": true
       },
       {
-        "Name": "requestDTO",
-        "Type": "ModelLayer.DTO.RequestDTO",
+        "Name": "addressEntryDTO",
+        "Type": "ModelLayer.DTO.AddressBookEntryDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "ModelLayer.DTO.ResponseDTO\u00601[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

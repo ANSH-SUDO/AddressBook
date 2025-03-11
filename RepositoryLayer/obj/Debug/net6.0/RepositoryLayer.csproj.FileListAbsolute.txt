@@ -12,3 +12,6 @@ E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.genruntimeconfig.cache
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\ModelLayer.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\bin\Debug\net6.0\ModelLayer.pdb
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\RepositoryLayer\obj\Debug\net6.0\Reposito.A0A61804.Up2Date
