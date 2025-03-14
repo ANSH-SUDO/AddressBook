@@ -1,11 +1,11 @@
 using AutoMapper;
 using BusinessLayer.Interface;
+using BusinessLayer.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ModelLayer;
 using ModelLayer.DTO;
 using RepositoryLayer.Context;
-using RepositoryLayer.Entity;
 using System;
 
 namespace AddressBook.Controllers;

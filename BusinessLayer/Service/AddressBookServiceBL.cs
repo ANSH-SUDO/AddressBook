@@ -2,13 +2,13 @@
 using BusinessLayer.Interface;
 using ModelLayer.DTO;
 using ModelLayer;
-using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RepositoryLayer.Entity;
 
 namespace BusinessLayer.Service
 {

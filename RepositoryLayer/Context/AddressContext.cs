@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace RepositoryLayer.Context
     {
         public AddressContext(DbContextOptions<AddressContext> options) : base(options) { }
 
-        public DbSet<Entity.AddressEntity> Users { get; set; }
+        public DbSet<AddressEntity> Users{ get; set; }
     }
 }

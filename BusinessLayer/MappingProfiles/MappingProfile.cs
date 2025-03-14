@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RepositoryLayer.Entity;
 
 namespace BusinessLayer.MappingProfiles
 {
@@ -13,7 +14,7 @@ namespace BusinessLayer.MappingProfiles
     {
         public MappingProfile()
         {
-            CreateMap<AddressBookEntry, AddressBookEntryDTO>().ReverseMap();
+            CreateMap<AddressEntity, AddressBookEntryDTO>().ReverseMap();
         }
     }
 }

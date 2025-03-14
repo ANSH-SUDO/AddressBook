@@ -99,6 +99,38 @@
   },
   {
     "ContainingType": "AddressBook.Controllers.AddressBookController",
+    "Method": "Login",
+    "RelativePath": "AddressBook/loginUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "RepositoryLayer.Entity.AddressEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AddressBook.Controllers.AddressBookController",
+    "Method": "Register",
+    "RelativePath": "AddressBook/registerUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "RepositoryLayer.Entity.AddressEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AddressBook.Controllers.AddressBookController",
     "Method": "UpdateContact",
     "RelativePath": "AddressBook/updateContact/{id}",
     "HttpMethod": "PUT",

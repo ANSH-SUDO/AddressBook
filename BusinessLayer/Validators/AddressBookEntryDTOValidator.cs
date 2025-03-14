@@ -16,8 +16,8 @@ namespace BusinessLayer.Validators
             {
                 RuleFor(x => x.Name).NotEmpty();
                 RuleFor(x => x.Email).NotEmpty().EmailAddress();
-                RuleFor(x => x.PhoneNumber).NotEmpty().Matches(@"^\+?[1-9][0-9]{7,14}$")
-                .WithMessage("Invalid phone number format");
+                RuleFor(x => x.Password).NotEmpty()
+                .WithMessage("Invalid password format");
             }
         }
     }

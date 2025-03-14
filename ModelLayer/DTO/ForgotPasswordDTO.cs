@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelLayer.DTO
 {
-    public class AddressBookEntryDTO
+    public class ForgotPasswordDTO
     {
-        public string Name { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
     }
 }
