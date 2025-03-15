@@ -1,3 +1,4 @@
+using AddressBook.RabbitMQ;
 using AutoMapper;
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
@@ -20,6 +21,13 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
 builder.Services.AddDbContext<AddressContext>(options => options.UseSqlServer(connectionString));
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "AddressBook_";
+});
+
+builder.Services.AddSingleton<RedisCacheService>();
 builder.Services.AddScoped<EmailService>();
 builder.Services.AddSingleton<JwtService>();
 
@@ -40,6 +48,7 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddScoped<IAddressBookServiceRL, AddressBookServiceRL>();
 builder.Services.AddScoped<IAddressBookServiceBL, AddressBookServiceBL>();
+builder.Services.AddScoped<IRabbitMQProducer, RabbitMQProducer>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 

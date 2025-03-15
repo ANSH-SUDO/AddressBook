@@ -87,3 +87,8 @@ E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debu
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debug\net6.0\AddressBook.pdb
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debug\net6.0\AddressBook.genruntimeconfig.cache
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\obj\Debug\net6.0\ref\AddressBook.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\StackExchange.Redis.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\RabbitMQ.Client.dll

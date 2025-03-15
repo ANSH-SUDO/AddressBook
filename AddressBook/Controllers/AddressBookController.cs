@@ -1,3 +1,4 @@
+using AddressBook.RabbitMQ;
 using AutoMapper;
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ModelLayer;
 using ModelLayer.DTO;
 using RepositoryLayer.Context;
+using RepositoryLayer.Entity;
 using System;
 
 namespace AddressBook.Controllers;
@@ -16,9 +18,15 @@ public class AddressBookController : ControllerBase
 {
     private readonly IAddressBookServiceBL _addressBL;
     private readonly IMapper _mapper;
-    public AddressBookController(IAddressBookServiceBL addressBL, IMapper mapper)
+    private readonly IRabbitMQProducer _rabbitMQProducer;
+    private readonly RedisCacheService _redisCacheService;
+    private readonly string _cacheKey = "AddressBookData";
+
+    public AddressBookController(IAddressBookServiceBL addressBL, IRabbitMQProducer rabbitMQProducer, RedisCacheService redisCacheService, IMapper mapper)
     {
         _addressBL = addressBL;
+        _rabbitMQProducer = rabbitMQProducer;
+        _redisCacheService = redisCacheService;
         _mapper = mapper;
     }
 
@@ -29,7 +37,9 @@ public class AddressBookController : ControllerBase
     [HttpGet]
     public ActionResult<string> GetAllContacts()
     {
+        var contact = _redisCacheService.GetData<List<AddressEntity>>(_cacheKey);
         var result = _addressBL.GetAllContacts();
+        _redisCacheService.SetData(_cacheKey, result, TimeSpan.FromMinutes(30));
         return Ok(new
         {
             Success = true,
@@ -69,6 +79,8 @@ public class AddressBookController : ControllerBase
     public ActionResult<string> AddContact([FromBody] AddressBookEntryDTO addressEntryDTO)
     {
         var result = _addressBL.AddContact(addressEntryDTO);
+        _rabbitMQProducer.SendProductMessage(result);
+        _redisCacheService.RemoveData(_cacheKey);
         return CreatedAtAction(nameof(AddContact), new { id = result.Name }, result);       
     }
 
@@ -83,6 +95,7 @@ public class AddressBookController : ControllerBase
     public ActionResult<string> UpdateContact(int id, [FromBody] AddressBookEntryDTO addressEntryDTO)
     {
         var result = _addressBL.UpdateContact(id, addressEntryDTO);
+        _redisCacheService.RemoveData(_cacheKey);
         if (result == null)
             return NotFound(new { Message = "Contact not found" });
 
@@ -104,6 +117,7 @@ public class AddressBookController : ControllerBase
     public ActionResult<string> DeleteContact(int id)
     {
         var isDeleted = _addressBL.DeleteContact(id);
+        _redisCacheService.RemoveData(_cacheKey);
         if (!isDeleted)
             return NotFound(new { Message = "Contact not found" });
 
