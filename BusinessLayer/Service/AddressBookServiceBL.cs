@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RepositoryLayer.Entity;
+using RepositoryLayer.Service;
 
 namespace BusinessLayer.Service
 {
@@ -21,6 +22,11 @@ namespace BusinessLayer.Service
         {
             _addressRL = addressRL;
             _mapper = mapper;
+        }
+
+        public AddressBookServiceBL(AddressBookServiceRL addressRL)
+        {
+            _addressRL = addressRL;
         }
 
         public AddressBookEntryDTO AddContact(AddressBookEntryDTO entryDto)

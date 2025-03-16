@@ -22,6 +22,10 @@ namespace RepositoryLayer.Service
             _dbContext = dbContext;
         }
 
+        public AddressBookServiceRL()
+        {
+        }
+
         public AddressEntity AddContact(AddressEntity entity)
         {
             _dbContext.Users.Add(entity);

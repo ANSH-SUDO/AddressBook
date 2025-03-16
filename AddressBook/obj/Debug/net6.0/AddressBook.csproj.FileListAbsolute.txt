@@ -92,3 +92,7 @@ E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debu
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\StackExchange.Redis.dll
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Newtonsoft.Json.dll
 E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\RabbitMQ.Client.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Documents\Capgemini- Important\Training_Data\AddressBook\AddressBook\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -46,6 +46,9 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<IAddressBookServiceRL, AddressBookServiceRL>();
 builder.Services.AddScoped<IAddressBookServiceBL, AddressBookServiceBL>();
 builder.Services.AddScoped<IRabbitMQProducer, RabbitMQProducer>();
@@ -53,6 +56,12 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 // Configure the HTTP request pipeline.
 
